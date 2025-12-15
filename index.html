@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Anupam AI Solver</title>
+  <link rel="stylesheet" href="style.css" />
+  <!-- Lightweight math engine for safe expression parsing -->
+  <script src="https://cdn.jsdelivr.net/npm/mathjs@12.4.1/lib/browser/math.js"></script>
+</head>
+<body>
+  <header class="container">
+    <h1>Anupam AI Solver</h1>
+    <p>Evaluate expressions, solve linear and quadratic equations—instantly, in your browser.</p>
+  </header>
+
+  <main class="container">
+    <section class="card">
+      <h2>Expression evaluator</h2>
+      <p>Type any math expression. Examples: 12*(3+4), sin(pi/4), 2^10, sqrt(75).</p>
+      <div class="row">
+        <input id="expr-input" type="text" placeholder="e.g., 12*(3+4) + sqrt(16)" />
+        <button id="expr-btn">Evaluate</button>
+      </div>
+      <div class="result" id="expr-result"></div>
+    </section>
+
+    <section class="card">
+      <h2>Linear equation solver</h2>
+      <p>Form: a·x + b = c. Enter numbers for a, b, c.</p>
+      <div class="grid-3">
+        <input id="lin-a" type="number" step="any" placeholder="a" />
+        <input id="lin-b" type="number" step="any" placeholder="b" />
+        <input id="lin-c" type="number" step="any" placeholder="c" />
+      </div>
+      <button id="lin-btn">Solve for x</button>
+      <div class="result" id="lin-result"></div>
+    </section>
+
+    <section class="card">
+      <h2>Quadratic equation solver</h2>
+      <p>Form: a·x² + b·x + c = 0. Enter a, b, c.</p>
+      <div class="grid-3">
+        <input id="quad-a" type="number" step="any" placeholder="a" />
+        <input id="quad-b" type="number" step="any" placeholder="b" />
+        <input id="quad-c" type="number" step="any" placeholder="c" />
+      </div>
+      <button id="quad-btn">Solve roots</button>
+      <div class="result" id="quad-result"></div>
+    </section>
+
+    <section class="card">
+      <h2>About</h2>
+      <p>This is a static site running on GitHub Pages. All math is computed locally in your browser.</p>
+    </section>
+  </main>
+
+  <footer class="container footer">
+    <span>© 2025 Anupam</span>
+    <span>Made with HTML, CSS, and JavaScript</span>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
