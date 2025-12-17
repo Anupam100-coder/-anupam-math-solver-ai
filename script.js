@@ -119,10 +119,9 @@ function toggleAll(select) {
     document.getElementById(m.sectionId).style.display = select ? "block" : "none";
   });
 }
-
-// Individual toggle
-function toggleSection(sectionId, checkboxId) {
-  const section = document.getElementById(sectionId);
-  const checkbox = document.getElementById(checkboxId);
-  section.style.display = checkbox.checked ? "block" : "none";
+ // If any individual checkbox is unchecked, uncheck Select All
+  if (!checkbox.checked) {
+    document.getElementById("selectAll").checked = false;
+  }
 }
+
