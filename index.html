@@ -18,21 +18,19 @@
 
     <!-- Checkbox selector -->
     <section class="card">
-      <h2>Select Functions</h2>
-      <p>Choose which solver(s) to show:</p>
-
-    <section class="card">
   <h2>Select Functions</h2>
   <p>Choose which solver(s) to show:</p>
 
+  <div class="button-group">
+    <button type="button" class="select-btn" onclick="toggleAll(true)">Select All</button>
+    <button type="button" class="clear-btn" onclick="toggleAll(false)">Clear All</button>
+  </div>
+
   <div class="checkbox-group">
-    <label><input type="checkbox" id="selectAll" onchange="toggleAll()">Select All</label>
     <label><input type="checkbox" id="exprCheck" onchange="toggleSection('expr-section','exprCheck')">Expression Evaluator</label>
     <label><input type="checkbox" id="linCheck" onchange="toggleSection('lin-section','linCheck')">Linear Equation Solver</label>
     <label><input type="checkbox" id="quadCheck" onchange="toggleSection('quad-section','quadCheck')">Quadratic Solver</label>
   </div>
-
-  <button type="button" class="clear-btn" onclick="clearAll()">Clear All</button>
 </section>
 
     <!-- Expression evaluator section -->
