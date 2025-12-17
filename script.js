@@ -109,16 +109,30 @@ function toggleSection(sectionId, checkboxId) {
 function toggleAll() {
   const selectAll = document.getElementById("selectAll").checked;
 
-  // List of all checkboxes and their sections
   const mappings = [
     {checkId: "exprCheck", sectionId: "expr-section"},
     {checkId: "linCheck", sectionId: "lin-section"},
     {checkId: "quadCheck", sectionId: "quad-section"}
   ];
 
-  // Apply to each
   mappings.forEach(m => {
     document.getElementById(m.checkId).checked = selectAll;
     document.getElementById(m.sectionId).style.display = selectAll ? "block" : "none";
+  });
+}
+
+// Handle Clear All button
+function clearAll() {
+  document.getElementById("selectAll").checked = false;
+
+  const mappings = [
+    {checkId: "exprCheck", sectionId: "expr-section"},
+    {checkId: "linCheck", sectionId: "lin-section"},
+    {checkId: "quadCheck", sectionId: "quad-section"}
+  ];
+
+  mappings.forEach(m => {
+    document.getElementById(m.checkId).checked = false;
+    document.getElementById(m.sectionId).style.display = "none";
   });
 }
