@@ -120,3 +120,16 @@ label {
   margin-bottom: 6px;       /* spacing between each option */
   cursor: pointer;          /* makes label clickable */
 }
+/* Fix checkbox vertical alignment */
+input[type="checkbox"] {
+  vertical-align: middle;
+  margin-right: 6px;
+}
+
+/* Optional: make labels cleaner and clickable */
+label {
+  display: inline-flex;
+  align-items: center;
+  margin-bottom: 8px;
+  cursor: pointer;
+}
