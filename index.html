@@ -14,8 +14,24 @@
     <p>Evaluate expressions, solve linear and quadratic equations—instantly, in your browser.</p>
   </header>
 
-  <main class="container">
+   <main class="container">
+
+    <!-- Checkbox selector -->
     <section class="card">
+      <h2>Select Functions</h2>
+      <p>Choose which solver(s) to show:</p>
+
+      <!-- Select All -->
+      <label><input type="checkbox" id="selectAll" onchange="toggleAll()"> Select All</label><br>
+
+      <!-- Individual options -->
+      <label><input type="checkbox" id="exprCheck" onchange="toggleSection('expr-section','exprCheck')"> Expression Evaluator</label><br>
+      <label><input type="checkbox" id="linCheck" onchange="toggleSection('lin-section','linCheck')"> Linear Equation Solver</label><br>
+      <label><input type="checkbox" id="quadCheck" onchange="toggleSection('quad-section','quadCheck')"> Quadratic Solver</label><br>
+    </section>
+
+    <!-- Expression evaluator section -->
+    <section class="card" id="expr-section" style="display:none;">
       <h2>Expression evaluator</h2>
       <p>Type any math expression. Examples: 12*(3+4), sin(pi/4), 2^10, sqrt(75).</p>
       <div class="row">
@@ -25,7 +41,8 @@
       <div class="result" id="expr-result"></div>
     </section>
 
-    <section class="card">
+    <!-- Linear equation solver section -->
+    <section class="card" id="lin-section" style="display:none;">
       <h2>Linear equation solver</h2>
       <p>Form: a·x + b = c. Enter numbers for a, b, c.</p>
       <div class="grid-3">
@@ -37,7 +54,8 @@
       <div class="result" id="lin-result"></div>
     </section>
 
-    <section class="card">
+    <!-- Quadratic solver section -->
+    <section class="card" id="quad-section" style="display:none;">
       <h2>Quadratic equation solver</h2>
       <p>Form: a·x² + b·x + c = 0. Enter a, b, c.</p>
       <div class="grid-3">
@@ -48,8 +66,9 @@
       <button id="quad-btn">Solve roots</button>
       <div class="result" id="quad-result"></div>
     </section>
-    
+
   </main>
+
 
   <footer class="container footer">
     <span>© 2025 Anupam</span>
