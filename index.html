@@ -21,17 +21,19 @@
       <h2>Select Functions</h2>
       <p>Choose which solver(s) to show:</p>
 
-      <!-- Select All -->
-      <label><input type="checkbox" id="selectAll" onchange="toggleAll()"> Select All</label><br>
+    <section class="card">
+  <h2>Select Functions</h2>
+  <p>Choose which solver(s) to show:</p>
 
-      <!-- Individual options -->
-      <label><input type="checkbox" id="exprCheck" onchange="toggleSection('expr-section','exprCheck')"> Expression Evaluator</label><br>
-      <label><input type="checkbox" id="linCheck" onchange="toggleSection('lin-section','linCheck')"> Linear Equation Solver</label><br>
-      <label><input type="checkbox" id="quadCheck" onchange="toggleSection('quad-section','quadCheck')"> Quadratic Solver</label><br>
-      <!-- Clear All button -->
-  <button type="button" onclick="clearAll()">Clear All</button>
+  <div class="checkbox-group">
+    <label><input type="checkbox" id="selectAll" onchange="toggleAll()">Select All</label>
+    <label><input type="checkbox" id="exprCheck" onchange="toggleSection('expr-section','exprCheck')">Expression Evaluator</label>
+    <label><input type="checkbox" id="linCheck" onchange="toggleSection('lin-section','linCheck')">Linear Equation Solver</label>
+    <label><input type="checkbox" id="quadCheck" onchange="toggleSection('quad-section','quadCheck')">Quadratic Solver</label>
+  </div>
 
-    </section>
+  <button type="button" class="clear-btn" onclick="clearAll()">Clear All</button>
+</section>
 
     <!-- Expression evaluator section -->
     <section class="card" id="expr-section" style="display:none;">
