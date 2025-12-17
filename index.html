@@ -3,9 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title> Math Solver</title>
+  <title>Math Solver</title>
   <link rel="stylesheet" href="style.css" />
-  <!-- Lightweight math engine for safe expression parsing -->
   <script src="https://cdn.jsdelivr.net/npm/mathjs@12.4.1/lib/browser/math.js"></script>
 </head>
 <body>
@@ -14,28 +13,28 @@
     <p>Evaluate expressions, solve linear and quadratic equations—instantly, in your browser.</p>
   </header>
 
-   <main class="container">
+  <main class="container">
 
-    <!-- Checkbox selector -->
+    <!-- Selector -->
     <section class="card">
-  <h2>Select Functions</h2>
-  <p>Choose which solver(s) to show:</p>
+      <h2>Select Functions</h2>
+      <p>Choose which solver(s) to show:</p>
 
-  <div class="button-group">
-    <button type="button" class="select-btn" onclick="toggleAll(true)">Select All</button>
-    <button type="button" class="clear-btn" onclick="toggleAll(false)">Clear All</button>
-  </div>
+      <div class="button-group">
+        <button type="button" class="select-btn" onclick="toggleAll(true)">Select All</button>
+        <button type="button" class="clear-btn" onclick="toggleAll(false)">Clear All</button>
+      </div>
 
-  <div class="checkbox-group">
-    <label><input type="checkbox" id="exprCheck" onchange="toggleSection('expr-section','exprCheck')">Expression Evaluator</label>
-    <label><input type="checkbox" id="linCheck" onchange="toggleSection('lin-section','linCheck')">Linear Equation Solver</label>
-    <label><input type="checkbox" id="quadCheck" onchange="toggleSection('quad-section','quadCheck')">Quadratic Solver</label>
-  </div>
-</section>
+      <div class="checkbox-group">
+        <label><input type="checkbox" id="exprCheck" onchange="toggleSection('expr-section','exprCheck')">Expression Evaluator</label>
+        <label><input type="checkbox" id="linCheck" onchange="toggleSection('lin-section','linCheck')">Linear Equation Solver</label>
+        <label><input type="checkbox" id="quadCheck" onchange="toggleSection('quad-section','quadCheck')">Quadratic Solver</label>
+      </div>
+    </section>
 
-    <!-- Expression evaluator section -->
+    <!-- Expression evaluator -->
     <section class="card" id="expr-section" style="display:none;">
-      <h2>Expression evaluator</h2>
+      <h2>Expression Evaluator</h2>
       <p>Type any math expression. Examples: 12*(3+4), sin(pi/4), 2^10, sqrt(75).</p>
       <div class="row">
         <input id="expr-input" type="text" placeholder="e.g., 12*(3+4) + sqrt(16)" />
@@ -44,9 +43,9 @@
       <div class="result" id="expr-result"></div>
     </section>
 
-    <!-- Linear equation solver section -->
+    <!-- Linear solver -->
     <section class="card" id="lin-section" style="display:none;">
-      <h2>Linear equation solver</h2>
+      <h2>Linear Equation Solver</h2>
       <p>Form: a·x + b = c. Enter numbers for a, b, c.</p>
       <div class="grid-3">
         <input id="lin-a" type="number" step="any" placeholder="a" />
@@ -57,9 +56,9 @@
       <div class="result" id="lin-result"></div>
     </section>
 
-    <!-- Quadratic solver section -->
+    <!-- Quadratic solver -->
     <section class="card" id="quad-section" style="display:none;">
-      <h2>Quadratic equation solver</h2>
+      <h2>Quadratic Equation Solver</h2>
       <p>Form: a·x² + b·x + c = 0. Enter a, b, c.</p>
       <div class="grid-3">
         <input id="quad-a" type="number" step="any" placeholder="a" />
@@ -71,7 +70,6 @@
     </section>
 
   </main>
-
 
   <footer class="container footer">
     <span>© 2025 Anupam</span>
