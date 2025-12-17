@@ -3,7 +3,7 @@ function fmt(n) {
   if (typeof n !== 'number' || !isFinite(n)) return String(n);
   const a = Math.abs(n);
   if (a !== 0 && (a < 1e-6 || a >= 1e6)) return n.toExponential(6);
-  return Number(n.toFixed(10)).toString(); // trim floating noise
+  return Number(n.toFixed(10)).toString();
 }
 
 // Expression evaluator
@@ -75,53 +75,4 @@ document.getElementById('quad-btn').addEventListener('click', () => {
 
   if (a === 0) {
     out.classList.add('error');
-    out.textContent = 'This is not quadratic (a must be nonzero). Try the linear solver above.';
-    return;
-  }
-
-  const D = b*b - 4*a*c;
-  if (D > 0) {
-    const r1 = (-b + Math.sqrt(D)) / (2*a);
-    const r2 = (-b - Math.sqrt(D)) / (2*a);
-    out.textContent = `Two real roots:\n  x₁ = ${fmt(r1)}\n  x₂ = ${fmt(r2)}`;
-  } else if (D === 0) {
-    const r = (-b) / (2*a);
-    out.textContent = `One real root (double):\n  x = ${fmt(r)}`;
-  } else {
-    const real = (-b) / (2*a);
-    const imag = Math.sqrt(-D) / (2*a);
-    out.textContent = `Complex roots:\n  x₁ = ${fmt(real)} + ${fmt(imag)}i\n  x₂ = ${fmt(real)} - ${fmt(imag)}i`;
-  }
-});
-// Show/hide individual solver sections
-function toggleSection(sectionId, checkboxId) {
-  const section = document.getElementById(sectionId);
-  const checkbox = document.getElementById(checkboxId);
-  section.style.display = checkbox.checked ? "block" : "none";
-
-  // If any individual checkbox is unchecked, uncheck Select All
-  if (!checkbox.checked) {
-    document.getElementById("selectAll").checked = false;
-  }
-}
-
-// Handle Select All checkbox
-// Unified toggle function for Select All and Clear All
-function toggleAll(select) {
-  const mappings = [
-    {checkId: "exprCheck", sectionId: "expr-section"},
-    {checkId: "linCheck", sectionId: "lin-section"},
-    {checkId: "quadCheck", sectionId: "quad-section"}
-  ];
-
-  mappings.forEach(m => {
-    document.getElementById(m.checkId).checked = select;
-    document.getElementById(m.sectionId).style.display = select ? "block" : "none";
-  });
-}
- // If any individual checkbox is unchecked, uncheck Select All
-  if (!checkbox.checked) {
-    document.getElementById("selectAll").checked = false;
-  }
-}
-
+    out.textContent = 'This is not quadratic (a must be nonzero
