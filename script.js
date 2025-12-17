@@ -93,3 +93,32 @@ document.getElementById('quad-btn').addEventListener('click', () => {
     out.textContent = `Complex roots:\n  x₁ = ${fmt(real)} + ${fmt(imag)}i\n  x₂ = ${fmt(real)} - ${fmt(imag)}i`;
   }
 });
+// Show/hide individual solver sections
+function toggleSection(sectionId, checkboxId) {
+  const section = document.getElementById(sectionId);
+  const checkbox = document.getElementById(checkboxId);
+  section.style.display = checkbox.checked ? "block" : "none";
+
+  // If any individual checkbox is unchecked, uncheck Select All
+  if (!checkbox.checked) {
+    document.getElementById("selectAll").checked = false;
+  }
+}
+
+// Handle Select All checkbox
+function toggleAll() {
+  const selectAll = document.getElementById("selectAll").checked;
+
+  // List of all checkboxes and their sections
+  const mappings = [
+    {checkId: "exprCheck", sectionId: "expr-section"},
+    {checkId: "linCheck", sectionId: "lin-section"},
+    {checkId: "quadCheck", sectionId: "quad-section"}
+  ];
+
+  // Apply to each
+  mappings.forEach(m => {
+    document.getElementById(m.checkId).checked = selectAll;
+    document.getElementById(m.sectionId).style.display = selectAll ? "block" : "none";
+  });
+}
